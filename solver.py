@@ -33,6 +33,7 @@ def decrypt(encrpyt_text):
     decrpyted = False
 
     CORRECT_PERCENTAGE = 0.75
+    MAX_CRYPT = -1000  # Has to be negative
 
     while not decrpyted:
         offset -= 1
@@ -51,7 +52,7 @@ def decrypt(encrpyt_text):
         if num_valid / len(words_in_text) >= CORRECT_PERCENTAGE:
             decrpyted = True
 
-        if offset < -1000:
+        if offset < MAX_CRYPT:
             raise Exception("Couldn't find solution")
 
     return decrypt_text
